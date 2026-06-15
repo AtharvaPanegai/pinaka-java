@@ -1,0 +1,31 @@
+# Build output
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+
+# Gradle
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+gradlew
+gradlew.bat
+
+# IDE
+.idea/
+.vscode/
+.settings/
+.classpath
+.project
+*.iml
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
