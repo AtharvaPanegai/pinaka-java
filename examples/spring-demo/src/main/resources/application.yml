@@ -1,0 +1,8 @@
+server:
+  port: 4002
+
+pinaka:
+  api-key: "pnk6bc223347f41f4a92732c7a0797048ad321a2b599730e76b"
+  service: java-demo
+  environment: development
+  debug: true
