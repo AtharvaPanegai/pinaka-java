@@ -16,6 +16,9 @@ public class ErrorCapture {
         Map<String, Object> payload = new HashMap<>();
         payload.put("apiKey", config.getApiKey());
         payload.put("service", config.getService());
+        if (config.getRepoId() != null && !config.getRepoId().isBlank()) {
+            payload.put("repoId", config.getRepoId());
+        }
         payload.put("environment", config.getEnvironment());
         payload.put("language", "java");
         payload.put("sdkVersion", "0.1.0");
