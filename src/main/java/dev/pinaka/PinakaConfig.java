@@ -3,6 +3,8 @@ package dev.pinaka;
 public class PinakaConfig {
     private final String apiKey;
     private final String service;
+    /** From the Repositories page in your Garuda dashboard. When provided, repo resolution is exact. */
+    private final String repoId;
     private final String environment;
     private final String release;
     private final int maxLogLines;
@@ -12,6 +14,7 @@ public class PinakaConfig {
     private PinakaConfig(Builder builder) {
         this.apiKey = builder.apiKey;
         this.service = builder.service;
+        this.repoId = builder.repoId;
         this.environment = builder.environment != null ? builder.environment
                 : System.getenv().getOrDefault("APP_ENV", "production");
         this.release = builder.release != null ? builder.release
@@ -23,6 +26,7 @@ public class PinakaConfig {
 
     public String getApiKey() { return apiKey; }
     public String getService() { return service; }
+    public String getRepoId() { return repoId; }
     public String getEnvironment() { return environment; }
     public String getRelease() { return release; }
     public int getMaxLogLines() { return maxLogLines; }
@@ -36,6 +40,7 @@ public class PinakaConfig {
     public static class Builder {
         private final String apiKey;
         private final String service;
+        private String repoId;
         private String environment;
         private String release;
         private int maxLogLines = 100;
@@ -49,6 +54,7 @@ public class PinakaConfig {
             this.service = service;
         }
 
+        public Builder repoId(String repoId) { this.repoId = repoId; return this; }
         public Builder environment(String env) { this.environment = env; return this; }
         public Builder release(String release) { this.release = release; return this; }
         public Builder maxLogLines(int max) { this.maxLogLines = max; return this; }
